@@ -148,7 +148,7 @@ int split_commands(data_shell *datash, char *input)
 			break;
 
 		go_next(&list_s, &list_l, datash);
-		
+
 		if (list_l != NULL)
 			list_l = list_l->next;
 	}
