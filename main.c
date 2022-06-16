@@ -1,12 +1,29 @@
 #include "main.h"
+
+/**
+ * free_data - frees data structure
+ * @datash: data structure
+ * Return: no return
+ */
+void free_data(data_shell *datash)
+{
+	unsigned int i;
+
+	for (i = 0; datash->_environ[i]; i++)
+	{
+		free(datash->_environ[i]);
+	}
+
+	free(datash->_environ);
+	free(datash->pid);
+}
+
 /**
  * set_data - Initialize data structure
- *
  * @datash: data structure
  * @av: argument vector
  * Return: no return
  */
-
 void set_data(data_shell *datash, char **av)
 {
 	unsigned int i;
@@ -32,30 +49,9 @@ void set_data(data_shell *datash, char **av)
 }
 
 /**
- * free_data - frees data structure
- *
- * @datash: data structure
- * Return: no return
- */
-void free_data(data_shell *datash)
-{
-	unsigned int i;
-
-	for (i = 0; datash->_environ[i]; i++)
-	{
-		free(datash->_environ[i]);
-	}
-
-	free(datash->_environ);
-	free(datash->pid);
-}
-
-/**
  * main - Entry point
- *
  * @ac: argument count
  * @av: argument vector
- *
  * Return: 0 on success.
  */
 int main(int ac, char **av)

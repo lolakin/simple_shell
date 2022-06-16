@@ -21,7 +21,6 @@ char *swap_char(char *input, int bool)
 				else
 					i++;
 			}
-
 			if (input[i] == '&')
 			{
 				if (input[i + 1] != '&')
@@ -120,6 +119,7 @@ void go_next(sep_list **list_s, line_list **list_l, data_shell *datash)
 /**
  * split_commands - splits command lines according to
  * the separators ;, | and &, and executes them
+ *
  * @datash: data structure
  * @input: input string
  * Return: 0 to exit, 1 to continue
@@ -134,6 +134,7 @@ int split_commands(data_shell *datash, char *input)
 	head_l = NULL;
 
 	add_nodes(&head_s, &head_l, input);
+
 	list_s = head_s;
 	list_l = head_l;
 
@@ -163,7 +164,7 @@ int split_commands(data_shell *datash, char *input)
 
 /**
  * split_line - tokenizes the input string
- * @input: input string.
+ * @input: input string
  * Return: string splitted.
  */
 char **split_line(char *input)
