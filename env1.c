@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * cmp_env_name - compares env variables names
  * with the name passed.
@@ -57,7 +58,7 @@ char *_getenv(const char *name, char **_environ)
 /**
  * _env - prints the evironment variables
  *
- * _env - prints the evironment variables
+ * @datash: data relevant.
  * Return: 1 on success.
  */
 int _env(data_shell *datash)
