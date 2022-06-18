@@ -143,7 +143,7 @@ void cd_to_home(data_shell *datash)
 	p_pwd = _strdup(pwd);
 
 	home = _getenv("HOME", datash->_environ);
-	
+
 	if (home == NULL)
 	{
 		set_env("OLDPWD", p_pwd, datash);
@@ -163,4 +163,3 @@ void cd_to_home(data_shell *datash)
 	free(p_pwd);
 	datash->status = 0;
 }
-			
